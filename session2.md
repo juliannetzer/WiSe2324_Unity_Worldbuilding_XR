@@ -1,4 +1,4 @@
-# Session 2 - Virtual Filmmaking 
+# Session 2 - Animating, Lighting, XR 
 
 # <a name="animations"></a>Animations 
 ![](images/animations.jpeg)
@@ -54,77 +54,52 @@ Right click on the left side again and select "Animation Track" (always make sur
 
 > Here you can find some information about the other tracks you can use with the timeline: [Overview of the Timeline-Features](https://lukeduckett.medium.com/it-all-comes-down-to-timing-a-quick-guide-to-timeline-in-unity-fd96b26820f4),[Control Track](https://christopherhilton88.medium.com/what-is-a-control-track-in-timeline-f70588662cce), [Signal Track](https://blog.unity.com/technology/how-to-use-timeline-signals), [Playable Track](https://docs.unity3d.com/2018.3/Documentation/ScriptReference/Timeline.PlayableTrack.html)
 
-# <a name="cinemachine"></a>Cinemachine 
-With Cinemachine you can create complex camera behaviours without coding, like following a target, switching between different cameras, blending camera positions etc. 
+# <a name="light"></a>Lighting the Scene
+![](images/lights.jpeg)
 
-## Virtual Cameras
-Cinemachine works with so called *Virtual Cameras*. GameObjects that tell the MainCamera how to behave, so its always important, that you still have a normal camera (GameObject -> Camera) in your Scene. You can create Virtual Cameras by clicking on GameObject -> Cinemachine -> Virtual Camera this will add a GameObject called "CM vcam1" in your scene, this GameObject now controls the position of the Main Camera. 
-![](images/virtualcamera.jpeg)
+## Realtime Lights 
+Realtime lights calculate the lightrays in realtime, that means you can move the lights, move the object that catch shadows from the light without any prerendering. 
 
-## Blending/ Switching between two virtual cameras
-Lets create two virtual Cameras and switch between them in the Timeline: 
-Create another Virtual Camera and position both cameras in different spots, so move the CM vcam1 & CM vcam2 GameObject in the Scene View.
+There are three types of lights: Spotlight, Pointlight, Directional ligth
 
-> To get a preview of what the cameras see switch to Game view, i would suggest to split the window that you can see the scene view and the game view at the same time: ![](images/split.gif)
+## Baked Lights
+For more advanced lighting you can bake your light, that means you prerender your lightmap which is then like a fixed texture on the object. You can't move the light source or the objects that get illuminated without recalculating the light. 
 
-To Switch between the cameras in the preview you can just click on "Solo" in the inspector, when you select the virtual camera you want to preview. 
-![](images/solo.gif)
+Two examples for baked lights are: area lights and skyboxes. 
 
-The next step is to switch between the cameras in the Timeline, so select the *Director*-GameObject again and and drag and drop the Main Camera in the left field of the Timeline window and select "Add Cinemachine Track". Now you can drag and drop you virtual cameras in the Cinemachine Track and arrange them: 
-![](images/timelinecinemachine.gif)
+To see the effect of a baked light, you have to set the object to static which you want to illuminate: 
+Select the object in the hierarchy and select Static -> Contribute GI 
 
-If you overlap the two virtual cameras Unity with blend between the two positions: 
-![](images/blending.gif)
+![](images/staticlighting.jpeg)
 
-## Looking at a target 
-Cinemachine cameras can also automatically look at a moving target: Select the Virtual Camera and drag and drop the moving GameObject in the "Look At" field. 
-![](images/lookat.gif)
+Then go to the "Lighting"-window (Window -> Rendering -> Lighting) and click on "Generate Lighting" (make sure the "Auto-Generate"-Box is not ticked)
 
-## Following a target
-The same also works for following a target: Select the Virtual Camera and just drag and drop the target in the "Follow" field. 
-![](images/following.gif)
+## Skyboxes 
+Skyboxes can be used to very easily create a complex lighting (and background) for a scene. It's basically a sphere around the scene that is filled with a texture, that illuminate the scene. 
 
-## Dollytrack 
-![](images/Dolly.gif)
-You can also create a Dolly to control the movement of your Virtual Camera. Go to GameObject -> Cinemachine -> Dollytrack with Cart. 
+To use a skybox go the lighting window (Window -> Rendering -> Lighting) and select the skybox material: 
+![](images/skyboxlighting.jpeg)
 
-Now you can change the Path of the Dolly Track when selecting the DollyTrack Gameobject: 
-![](images/dolly1.jpeg)
+(Note: You have to click on "Generate Lighting" and your Objects need to be static)
 
-And adjust the speed when selecting the DollyCart-GameObject: 
-![](images/dolly2.jpeg)
+Best places to find skyboxes: 
+- [Polyhaven](https://polyhaven.com/hdris)
+- [Unity Asset Store](https://assetstore.unity.com/2d/textures-materials/sky)
 
-Then create a new Virtual Camera (GameObject -> Cinemachine -> Virtual Camera) and select the DollyCart-GameObject as the follow target. In the Body-section you can then select "Tracked Dolly", drag and drop your Path (the DollyTrack-GameObject) and enable the Auto Dolly Feature: 
-![](images/dolly3.jpeg)
+### Importing a skybox (from Polyhaven)
+Download the skybox as .exr (i would recommend 4k resolution, if you wanna see the skybox in the background, if not 1k should be enough). 
 
-When you press play, the Virtual Camera should follow your Dolly Cart. 
+Import to Assets, then select the image in the Project Window and go to the inspector and select texture shape -> 
+![](images/importsettings.jpeg)
 
-# Flycam and other ways to control your virtual camera
+Then create a material (Assets -> Create -> Material) go the inspector and search for "Cubemap" in the shader dropdown. 
+![](images/skyboxmaterial.jpeg)
 
-Since we are producing our film in real-time you can also create the camera movement on the fly, while recording. There are multiple plugins, a simple one is this one:
-- [Free Fly Camera](https://assetstore.unity.com/packages/tools/camera/free-fly-camera-140739#reviews) 
-This lets you control the camera with the arrow-keys and the mouse, so you can fly through your virtual scene to record your film. 
+Then you can drag and drop the image that you imported in the cubemap area. 
+![](images/skyboxmaterial2.jpeg)
 
-Another more advanced plugin is the [Unity Virtual Camera App](https://apps.apple.com/us/app/unity-virtual-camera/id1478175507). This allows you to control your virtual camera with your phone. 
+Now you can use the skybox in the lighting settings. 
 
-# <a name="postprocessing"></a>Post Processing 
-![](images/postprocessing.jpg)
-
-Post Processing allows you to add multiple camera effects to your output image, like color grading, bloom, motion blur, etc. 
-
-To use the effects first create an empty GameObject and add the "Volume" Component to it: 
-![](images/post1.jpeg)
-
-Then create a new profile: 
-![](images/post2.jpeg)
-
-And add the effects with "Add Override": 
-![](images/post3.jpeg)
-
-To see the effects make sure that "Post Processing" is activated on your *(Main) Camera*: 
-![](images/post4.jpeg)
-
-> There are also a lot of post-processing effects on github just make sure that you select the correct *render pipeline* (we currently the universal render pipeline (URP)). 
 
 # <a name="recording"></a>Recording
 
@@ -140,53 +115,6 @@ The easiest way to record videos is the *Unity Recorder* (Window -> General -> R
 > The recorder also offer the possibilty to record 360°-video. In this case use at least 4k as a resolution. 
 
 > If the image quality is not good enough you can export an image sequence (e.g. .PNG) and then create the video in Premiere or in other video editing softwares. 
-
-
-# <a name="sounds"></a>Sound 
-
-To add sound to a scene create a new Audio Source: GameObject -> Audio -> Audio Source. 
-
-Then drag and drop your soundfile. 
-
-- [Tutorial: Sound Component in Unity](https://learn.unity.com/tutorial/working-with-audio-components-2019-3)
-
-Supported file formats: 
-- AIFF 
-- WAV 
-- MP3
-- Ogg 
-
-Places to get free sounds: 
-- [freesounds.org](https://freesound.org/people/Nox_Sound/): Different licenses
-- [OpenGameArt](https://opengameart.org/art-search-advanced?field_art_type_tid%5B%5D=13)
-- [Soundcloud](https://soundcloud.com/)
-
-> Tutorial how to work with Audio Tracks in the timeline: [Unity Learn: Audio and the Timeline](https://learn.unity.com/tutorial/working-with-audio-tracks-in-timeline#5f6126e3edbc2a0020034db9)
-
-# <a name="mixamo">Mixamo
-![](images/mixamo.gif)
-
-Mixamo offers a lot of Characters and Animations: https://www.mixamo.com
-
-To import in Unity: select character and animations and click on "Download", then choose these settings.
-![](images/mixamo1.jpeg)
-
-Import the fbx-file in Unity, select it in the project window and adjust the import settings: 
-![](images/mixamo2.jpeg)
-
-1. Extract textures -> Tab "Materials" -> Extract Textures...
-![](images/mixamo3.jpeg)
-
-2. Make sure the Animation is looped -> Tab "Animation"
-![](images/mixamo4.jpeg)
-
-3. Make sure the Rig is humanoid -> Tab "Rig" -> and Click on "Apply"
-![](images/mixamo5.jpeg)
-
-4. Drag and Drop the Animation on the object in the hiearchy
-![](images/mixamo6.gif)
-
-When you now enter the Play Mode your characters should look and move like the one in mixamo.
 
 
 

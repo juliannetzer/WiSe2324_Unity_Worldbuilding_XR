@@ -1,4 +1,4 @@
-# Session 1 - World Building 
+# Session 1
 
 # <a name="3dassets"></a>Working with 3D Assets
 ![](images/assets.jpeg)
@@ -89,130 +89,29 @@ Probably a problem with the renderpipeline, find the material in the project win
 	- select the asset in the Project window and click on "Extract Textures" and/or "Extract Materials" in the Inspector (in the "Materials" Tab)
 	-  If there are still no materials/textures you have to manually create them/ or find a new asset
 
-## How to use "Everything"-models: 
-The models are all stored in one fbx-file, in unity visible as one prefab. To get to the single models you have to place the big file in the scene, then right click and select "Prefab - Unpack completely". Then you can choose the models that you need and drag and drop them to the project window, which creates a new prefab with only the models you need.  
-
-> prefab: something like a template, lets you save a costum GameObject with all components, settings, and children as one asset. 
-
-Additionally the colors in the everything models are stored as vertex colors, so you can't see them with a normal shader/material, so we have to build our first shader with shader graph: 
-Create -> Shader Graph -> URP -> Lit Shader Graph 
-Select the shader in the project window and click on "Open Shader Editor" Unity should now look like this: 
-![](images/shadergraph1.jpeg)
-
-Right click somewhere in the dark area and select "Create Node" and search for "Vertex Color", now connect the Out-Output with the "Base Color"-Input and click "Save". 
-
-![](images/shadergraph2.jpeg)
-
-Now you can create a new material (Assets -> Create -> Material) and apply the shader to it (select the material in the Project window, go to the inspector and search for the name of your shader in the dropdown "Shader"-Menu). 
-
-> Advanced: [Shader Graph Tutorial](https://www.youtube.com/watch?v=Ar9eIn4z6XE), [The book of shaders](https://thebookofshaders.com/)
-
 **Task: Search for Assets for your world. Already import them into Unity, if something doesn't look as expected see the troubleshoot section, but don't lose too much time on trying to fix single assets.** 
 
+# <a name="sounds"></a>Sound 
 
-# <a name="terrain"></a>Building the Terrain & bring in the Assets
-![](images/placing.jpeg)
+To add sound to a scene create a new Audio Source: GameObject -> Audio -> Audio Source. 
 
-## Terrain Tool  
-![](images/terraintools.jpeg)
-With the Terrain Tool, you can very easily create landscapes and add vegetation. You can find a good tutorial here: 
-[How to build beautiful landscapes in Unity using Terrain Tools | Tutorial](https://www.youtube.com/watch?v=smnLYvF40s4)
+Then drag and drop your soundfile. 
 
-### Vegetation that work with the Terrain Tool: 
+- [Tutorial: Sound Component in Unity](https://learn.unity.com/tutorial/working-with-audio-components-2019-3)
 
-Since not all Vegetatation-Assets work with the terrain tool, here are some i found that work: 
+Supported file formats: 
+- AIFF 
+- WAV 
+- MP3
+- Ogg 
 
-- [Samples Assets from Unity](https://assetstore.unity.com/packages/3d/environments/landscapes/terrain-sample-asset-pack-145808): Very big (1.6GB), different Textures, Vegetation 
-- [Polygon Trees](https://assetstore.unity.com/packages/3d/vegetation/trees/polygon-trees-224068): Low Poly, no Wind
-- [Realistic Pines](https://assetstore.unity.com/packages/3d/vegetation/trees/realistic-pine-tree-pack-232166)
+Places to get free sounds: 
+- [freesounds.org](https://freesound.org/people/Nox_Sound/): Different licenses
+- [OpenGameArt](https://opengameart.org/art-search-advanced?field_art_type_tid%5B%5D=13)
+- [Soundcloud](https://soundcloud.com/)
 
+> Tutorial how to work with Audio Tracks in the timeline: [Unity Learn: Audio and the Timeline](https://learn.unity.com/tutorial/working-with-audio-tracks-in-timeline#5f6126e3edbc2a0020034db9)
 
-- Grass/Flowers: https://assetstore.unity.com/packages/2d/textures-materials/nature/grass-flowers-pack-free-138810
-
-> Other (commercial) Tool [Gaia Pro](https://assetstore.unity.com/packages/tools/terrain/gaia-pro-2021-terrain-scene-generator-193476)
-
-## Probuilder 
-![](images/probuilder.jpeg)
-With Probuilder you can quickly build simple geometric forms directly in unity. 
-
-[ProBuilder Tutorial](https://www.youtube.com/watch?v=YtzIXCKr8Wo)
-
-## Scatter Tool: 
-![](images/scatter_1.jpeg)
-![](images/scatter_2.jpeg)
-
-Place a certain amount of objects at random positions (and random rotations) in your scene. 
-
-## Grid Tool: 
-![](images/grid_1.jpeg)
-![](images/grid_2.jpeg)
-
-Place a certain amount of object in a grid (and random rotations) in your scene. 
-
-Instructions: 
-1. Create Empty GameObject (GameObject -> Create Empty)
-2. Go to Inspector-Window -> Add Component -> Search for "Grid Tool" or "Scatter Tool"
-3. Enter the amount, distance etc. & drag your Prefab into the Prefab box 
-4. Click on "Generate Objects"
-
-> Good place to get started with coding in Unity: [catlikecoding](https://catlikecoding.com/unity/tutorials/)
-
-**Task: Place all of your assets in the scene and build a terrain or the basic structure of your scene with ProBuilder.**
-
-# <a name="light"></a>Lighting the Scene
-![](images/lights.jpeg)
-
-## Realtime Lights 
-Realtime lights calculate the lightrays in realtime, that means you can move the lights, move the object that catch shadows from the light without any prerendering. 
-
-There are three types of lights: Spotlight, Pointlight, Directional ligth
-
-## Baked Lights
-For more advanced lighting you can bake your light, that means you prerender your lightmap which is then like a fixed texture on the object. You can't move the light source or the objects that get illuminated without recalculating the light. 
-
-Two examples for baked lights are: area lights and skyboxes. 
-
-To see the effect of a baked light, you have to set the object to static which you want to illuminate: 
-Select the object in the hierarchy and select Static -> Contribute GI 
-
-![](images/staticlighting.jpeg)
-
-Then go to the "Lighting"-window (Window -> Rendering -> Lighting) and click on "Generate Lighting" (make sure the "Auto-Generate"-Box is not ticked)
-
-## Skyboxes 
-Skyboxes can be used to very easily create a complex lighting (and background) for a scene. It's basically a sphere around the scene that is filled with a texture, that illuminate the scene. 
-
-To use a skybox go the lighting window (Window -> Rendering -> Lighting) and select the skybox material: 
-![](images/skyboxlighting.jpeg)
-
-(Note: You have to click on "Generate Lighting" and your Objects need to be static)
-
-Best places to find skyboxes: 
-- [Polyhaven](https://polyhaven.com/hdris)
-- [Unity Asset Store](https://assetstore.unity.com/2d/textures-materials/sky)
-
-### Importing a skybox (from Polyhaven)
-Download the skybox as .exr (i would recommend 4k resolution, if you wanna see the skybox in the background, if not 1k should be enough). 
-
-Import to Assets, then select the image in the Project Window and go to the inspector and select texture shape -> 
-![](images/importsettings.jpeg)
-
-Then create a material (Assets -> Create -> Material) go the inspector and search for "Cubemap" in the shader dropdown. 
-![](images/skyboxmaterial.jpeg)
-
-Then you can drag and drop the image that you imported in the cubemap area. 
-![](images/skyboxmaterial2.jpeg)
-
-Now you can use the skybox in the lighting settings. 
-
-## Fog
-
-There are multiple ways to create Fog in Unity, the easiest is the built-in Fog in the Lighting window (Window -> Rendering -> Lighting)
-
-Just click on Fog and select a color and density. 
-![](images/fog.jpeg)
-
-**Add lighting to your scene**
 
 
 
