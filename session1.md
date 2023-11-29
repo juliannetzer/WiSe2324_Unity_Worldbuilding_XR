@@ -1,5 +1,17 @@
 # Session 1
 
+# Working with the Unity Interface
+
+You can find a Cheat Sheet with the Basic Unity UI Elements here: 
+https://github.com/juliannetzer/arfoundation-demos_khb_sose22/blob/master/Handouts/220501_UnityCheatsheet.pdf
+
+## Tutorials for getting started in Unity: 
+- [Everest Pipkin: Quickstart Unity 3d ](https://docs.google.com/document/d/1xwGpjgIRhZAqprW-jECGN1WNh_o2jfO_84hjLQ59TIQ/edit)
+- [Brackeys: How to make a Video Game - Getting Started](https://www.youtube.com/watch?v=j48LtUkZRjU&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6)
+- [Ray Wenderlich: Unity Getting started](https://www.kodeco.com/7514-introduction-to-unity-getting-started-part-1-2)
+- [The Ultimate Beginner Guide to Unity](https://www.freecodecamp.org/news/the-ultimate-beginners-guide-to-game-development-in-unity-f9bfe972c2b5/)
+
+
 # <a name="3dassets"></a>Working with 3D Assets
 ![](images/assets.jpeg)
 
@@ -112,6 +124,8 @@ Places to get free sounds:
 
 > Tutorial how to work with Audio Tracks in the timeline: [Unity Learn: Audio and the Timeline](https://learn.unity.com/tutorial/working-with-audio-tracks-in-timeline#5f6126e3edbc2a0020034db9)
 
+## <a name="sounds"></a>Spatial Audio
+u 
 
 
 

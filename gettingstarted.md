@@ -1,5 +1,10 @@
-# Tutorials for getting started in Unity: 
-- [Everest Pipkin: Quickstart Unity 3d ](https://docs.google.com/document/d/1xwGpjgIRhZAqprW-jECGN1WNh_o2jfO_84hjLQ59TIQ/edit)
-- [Brackeys: How to make a Video Game - Getting Started](https://www.youtube.com/watch?v=j48LtUkZRjU&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6)
-- [Ray Wenderlich: Unity Getting started](https://www.kodeco.com/7514-introduction-to-unity-getting-started-part-1-2)
-- [The Ultimate Beginner Guide to Unity](https://www.freecodecamp.org/news/the-ultimate-beginners-guide-to-game-development-in-unity-f9bfe972c2b5/)
+# Install Unity 
+## Install Unity Hub
+Go to [Download Unity Hub](https://unity.com/de/download) and download the Unity Hub, you will find the Download Link for Mac when you scroll down a bit. 
+
+## Install Unity Editor 
+After installing the Unity Hub, start it and head over to "Installs" and click on "Install Editor" and choose version 2022.3.14, also install the following packages: 
+	- Android Build Support 
+	- iOS Build Support 
+ 
+
