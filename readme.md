@@ -1,4 +1,4 @@
-# Unity Worldbuilding & Real-Time film production workshop @ khb
+# Unity Worldbuilding & XR introduction workshop @ khb
 
 ## Overview: 
 - [Getting Started](gettingstarted.md)
