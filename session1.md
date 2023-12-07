@@ -1,11 +1,96 @@
 # Session 1
 
-# Working with the Unity Interface
+# Creating a new project
+
+Go to the Unity Hub and click on "New project"
+![](images/newproject1.jpg)
+
+Then select "3D", choose a name for your project and click on "Create project"
+![](images/newproject2.jpg)
+
+
+# Working with the Unity Editor
+
+## General Unity Glossary
+
+### Unity Hub
+The Installer for different Unity versions and the place to open all of your Unity projects 
+
+### Unity Editor 
+The Unity programm itself, where you design your game 
+
+### Build 
+when you are finished with your game, you can export your game as a build, which means that the game can be played on different platforms without the Unity Editor. 
+
+### Project 
+The project consists of all the elements that make up your game, it is a folder on your harddrive. 
+
+### Scenes 
+Scenes are like levels in your game, each level usually is made out of one scene. In the scene you basically save how your Assets are linked to each other (how they are placed in the scene, how they interact etc.). You can have as many scenes as you like in your game and not every scene has to be in the final game. 
+
+### Assets 
+Assets are all Elements in Unity that are saved as a file on your computer. For example 3D-Objects, Materials, Scripts etc. 
+
+### GameObjects
+GameObjects are the virtual objects in your Unity Scene, they are not saved as a file in your assets folder, but they only exist within the scene. (If you want to create an Assets out of a GameObject you can create a PreFab.) 
+
+### Component 
+Components are the functional pieces of every GameObject. Each GameObject is made out of different components, e.g. the "Mesh Renderer" tells Unity that this is an object that should be rendered (should be visible) in the scene. 
+
+## Unity Editor User Interface
+
+![](images/UnityUI.jpg)
+
+### 1. Project windows: 
+- a file explorer, where you can find all of your assets 
+- Unity projects are always a folder consisting of different file types (in contrast to e.g. a Blender file). That means if you press save, you only save the current scene, the rest of your project in saved in the folder. 
+
+> Data backups: always duplicate the entire folder, ideally always copy the entire folder before making major changes. Alternatively: Use a version control system like git. 
+
+### 2. Hierarchy
+- In the Hierarchy you can find all the GameObjects that are in your currently opened scene
+- Here you can also see how the objects are arranged hierarchically (Parent-Child)
+
+### 3. Inspector
+- shows you all the Components that are part of the current GameObject when you select a GameObject
+- also shows you the properties of all the Assets when you select an Assets
+- allows you to change the properties of the different Components & Assets
+
+### 4. Scene View 
+
+![](images/SceneView.jpg)
+
+- Displays the current 3D scene
+- Move with: 
+	- alt + left mouse button: Rotate
+	- middle mouse button: Move or alt+cmd+left mouse button
+	- Zoom: Mouse wheel/two fingers (up/down)/control+option+left mouse button
+	- double-click on object: focus on object 
+- Use the Scene Gizmo (a) to switch to a single axis view 
+- You can switch between 2D & 3D view (b) (helpful for UI work)
+- You can change the perspective mode (c)
+- Toggle visibily of gizmos (d)
+- Tools to move/rotate/scale objects (e)
+
+
+Image Scene View
+
+### 5. Game View 
+- shows the game as it will look later when the player will play it
+- if you press "Play" at the top of the screen, a preview of how the game will look later is displayed here 
+- here you can preview the game in different screen sizes etc. 
+- most of the animations/scripts etc. only run when you have pressed play
+
+### 6. Toolbar 
+- Control the Game Mode of the current scene
+
+### 7. Menubar
+- can be used to create Assets, GameObjects, change the window-arrangement, save the current scene etc. 
 
 You can find a Cheat Sheet with the Basic Unity UI Elements here: 
 https://github.com/juliannetzer/arfoundation-demos_khb_sose22/blob/master/Handouts/220501_UnityCheatsheet.pdf
 
-## Tutorials for getting started in Unity: 
+## Further tutorials for getting started in Unity: 
 - [Everest Pipkin: Quickstart Unity 3d ](https://docs.google.com/document/d/1xwGpjgIRhZAqprW-jECGN1WNh_o2jfO_84hjLQ59TIQ/edit)
 - [Brackeys: How to make a Video Game - Getting Started](https://www.youtube.com/watch?v=j48LtUkZRjU&list=PLPV2KyIb3jR5QFsefuO2RlAgWEz6EvVi6)
 - [Ray Wenderlich: Unity Getting started](https://www.kodeco.com/7514-introduction-to-unity-getting-started-part-1-2)
@@ -125,7 +210,7 @@ Places to get free sounds:
 > Tutorial how to work with Audio Tracks in the timeline: [Unity Learn: Audio and the Timeline](https://learn.unity.com/tutorial/working-with-audio-tracks-in-timeline#5f6126e3edbc2a0020034db9)
 
 ## <a name="sounds"></a>Spatial Audio
-u 
+
 
 
 
