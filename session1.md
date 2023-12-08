@@ -1,6 +1,6 @@
 # Session 1
 
-# Creating a new project
+# <a name="project">Creating a new project
 
 Go to the Unity Hub and click on "New project"
 ![](images/newproject1.jpg)
@@ -9,7 +9,7 @@ Then select "3D", choose a name for your project and click on "Create project"
 ![](images/newproject2.jpg)
 
 
-# Working with the Unity Editor
+# <a name="editor">Working with the Unity Editor
 
 ## General Unity Glossary
 
@@ -73,8 +73,6 @@ Components are the functional pieces of every GameObject. Each GameObject is mad
 - Tools to move/rotate/scale objects (e)
 
 
-Image Scene View
-
 ### 5. Game View 
 - shows the game as it will look later when the player will play it
 - if you press "Play" at the top of the screen, a preview of how the game will look later is displayed here 
@@ -132,9 +130,10 @@ Note: you can also use other file formats (link .blend etc. if the corresponding
 
 ## Online Sculpting Tools
 - [SculptGL](https://stephaneginier.com/sculptgl/)
+- [Monster Mash](https://monstermash.zone/)
 
 
-## Materials/ Shaders/ Textures 
+# <a name="materials"></a> Materials/ Shaders/ Textures 
 
 Every 3D-Assets in Unity needs a material that is attached to it, and every material needs a shader. The material is the place where the information like colors and textures are stored. The shader then tells unity how to render these information. (you can compare it to using a pencil: the material stores the color, the shader stores whether it is a wax crayon or a colored pencil). 
 
@@ -186,13 +185,12 @@ Probably a problem with the renderpipeline, find the material in the project win
 	- select the asset in the Project window and click on "Extract Textures" and/or "Extract Materials" in the Inspector (in the "Materials" Tab)
 	-  If there are still no materials/textures you have to manually create them/ or find a new asset
 
-**Task: Search for Assets for your world. Already import them into Unity, if something doesn't look as expected see the troubleshoot section, but don't lose too much time on trying to fix single assets.** 
 
-# <a name="sounds"></a>Sound 
+# <a name="audio"></a>Audio 
 
-To add sound to a scene create a new Audio Source: GameObject -> Audio -> Audio Source. 
+To add sound to a scene create a new Audio Source: GameObject -> Audio -> Audio Source. Or drag and drop your soundfile in the Sceneview. 
+![](images/AudioSource.gif)
 
-Then drag and drop your soundfile. 
 
 - [Tutorial: Sound Component in Unity](https://learn.unity.com/tutorial/working-with-audio-components-2019-3)
 
@@ -202,14 +200,25 @@ Supported file formats:
 - MP3
 - Ogg 
 
-Places to get free sounds: 
-- [freesounds.org](https://freesound.org/people/Nox_Sound/): Different licenses
+Places to get (free) sounds: 
+- [Adobe Creative Cloud](https://www.adobe.com/products/audition/offers/AdobeAuditionDLCSFX.html)
+- [Unity Asset Store](https://assetstore.unity.com/?category=audio&free=true&orderBy=1)
+- [freesounds.org](https://freesound.org/people/Nox_Sound/)
 - [OpenGameArt](https://opengameart.org/art-search-advanced?field_art_type_tid%5B%5D=13)
 - [Soundcloud](https://soundcloud.com/)
 
 > Tutorial how to work with Audio Tracks in the timeline: [Unity Learn: Audio and the Timeline](https://learn.unity.com/tutorial/working-with-audio-tracks-in-timeline#5f6126e3edbc2a0020034db9)
 
-## <a name="sounds"></a>Spatial Audio
+## <a name="spatialaudio"></a>Spatial Audio
+
+Spatial Audio works in Unity out of the box. If you have created an audio source in unity, you can use the "Spatial Blend" value to set how much the positioning of the audio source affects the volume and audible direction of the source. 
+![](images/Audio1.jpg)
+
+With "Min Distance" and "Max Distance" you can set the minimum and maximum distance of audibility. 
+![](images/Audio2.jpg)
+
+With the "Volume Rolloff" you can select different Rolloff algorithms. Select "Linear Rolloff" if you want to hear a strong difference based on the positioning, "Logarithmic Rolloff" for a more realistic effect. 
+![](images/Audio3.jpg)
 
 
 
