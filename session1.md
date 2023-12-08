@@ -5,8 +5,8 @@
 Go to the Unity Hub and click on "New project"
 ![](images/newproject1.jpg)
 
-Then select "3D", choose a name for your project and click on "Create project"
-![](images/newproject2.jpg)
+Then select "3D URP", choose a name for your project and click on "Create project"
+![](images/newproject2.jpeg)
 
 
 # <a name="editor">Working with the Unity Editor
