@@ -8,4 +8,5 @@
 	- [Working with 3D assets](session1.md#3dassets)
 	- [Materials/ Shaders/ Textures](session1.md#materials)
 	- [Audio](session1.md#audio)
-	- [Spatial Audio](session1#spatialaudio)
+	- [Spatial Audio](session1.md#spatialaudio)
+	- [Animation](session.md#animation)
