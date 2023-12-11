@@ -184,7 +184,7 @@ Probably a problem with the renderpipeline, find the material in the project win
 	- select the asset in the Project window and click on "Extract Textures" and/or "Extract Materials" in the Inspector (in the "Materials" Tab)
 	-  If there are still no materials/textures you have to manually create them/ or find a new asset
 
-# <a name="Perfomance?"></a>Performance?
+# <a name="perfomance"></a>Performance?
 
 Especially when choosing the 3D assets and lights, you should have in mind where your scene will be played in the end, e.g. as desktop VR, i.e. on a powerful computer, or in mobile VR (e.g. an Oculus Quest). As all devices only have a limited performance capacity. For the quest there is a website which gives you an good overview: 
 https://developer.oculus.com/documentation/unity/unity-perf/
