@@ -12,3 +12,7 @@
 	- [Audio](session1.md#audio)
 	- [Spatial Audio](session1.md#spatialaudio)
 	- [Animation](session.md#animation)
+- [Session 2](session2.md)
+	- [Quick Overview AR](session2.md#ar)
+	- [Structuring your project](session2.md#structure)
+	- [Packages](session2.md#packages)
