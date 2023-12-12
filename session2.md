@@ -3,8 +3,8 @@
 # <a name="ar"></a> Quick Overview AR 
 
 You can find more information on working with AR here: 
-[AR Foundation Demo Scenes](https://github.com/juliannetzer/arfoundation-demos_khb_sose22)
-[Tutorials on AR in Unity](https://www.youtube.com/watch?v=FWyTf3USDCQ)
+- [AR Foundation Demo Scenes](https://github.com/juliannetzer/arfoundation-demos_khb_sose22)
+- [Tutorials on AR in Unity](https://www.youtube.com/watch?v=FWyTf3USDCQ)
 
 How to build for iOS: 
 [Build for iOS](https://github.com/juliannetzer/arfoundation-demos_khb_sose22/blob/master/build.md)
