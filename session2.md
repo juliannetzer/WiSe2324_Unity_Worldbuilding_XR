@@ -45,7 +45,7 @@ When you now click on Assets -> "Export Package" Unity will only include the Ass
 
 ## Importing costum packages
 To import a package (like the one you created earlier) click on Assets -> Import Package -> Costum Package 
-![](images/packagemanagerexport3.gif)
+![](images/packagemanagerexport4.jpeg)
 
 
 
