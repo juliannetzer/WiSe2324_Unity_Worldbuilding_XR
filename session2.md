@@ -44,7 +44,7 @@ If you want to include Assets from only one scene you can first select your scen
 When you now click on Assets -> "Export Package" Unity will only include the Assets from the scene that you selected. 
 
 ## Importing costum packages
-To import a package (like the one you created earlier) click on Assets -> Import Package -> Costum Package 
+To import a package (like the one you created earlier) click on Assets -> Import Package -> Costum Package
 ![](images/packagemanagerexport4.jpeg)
 
 
